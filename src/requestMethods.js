@@ -7,7 +7,7 @@ const TOKEN =
   JSON?.parse(JSON?.parse(localStorage?.getItem("persist:root"))?.user)
     ?.currentUser?.accessToken || "";
 
-console.log(TOKEN);
+// console.log(TOKEN);
 
 // const TOKEN =
 //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTA3OGM0YTBjYWEwM2JmNGU2NWNiMyIsImlzU3RhZmYiOnRydWUsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NDYxMjk4MSwiZXhwIjoxNjQ0ODcyMTgxfQ.Fked8Am0oCcHVx4Fy44HUQv7LoXdCg70vlyMDm38tqM";

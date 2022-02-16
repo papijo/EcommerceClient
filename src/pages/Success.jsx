@@ -62,8 +62,6 @@ const Success = () => {
     //set Cart State Here
   }, []);
 
-  console.log(cart);
-
   return (
     <div
       style={{
@@ -72,6 +70,8 @@ const Success = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        textAlign: "center",
+        marginLeft: "10px",
       }}
     >
       {orderId
