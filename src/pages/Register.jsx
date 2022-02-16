@@ -99,7 +99,7 @@ const Register = () => {
           })
           .then(
             (response) => {
-              console.log(response.data);
+              // console.log(response.data);
               navigate("/login");
             },
             (error) => {
