@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { login } from "../redux/apiCalls";
 import { Link } from "react-router-dom";
 
@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   padding: 20px;
   background-color: white;
   ${mobile({ width: "75%" })}
+  ${tablet({ width: "60%" })}
 `;
 
 const Title = styled.h1`

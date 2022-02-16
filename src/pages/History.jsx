@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import { mobile } from "../responsive";
 import { userRequest } from "../../src/requestMethods";
 import { useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
-import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 
 const Container = styled.div``;
@@ -43,6 +41,7 @@ const History = () => {
     };
     getOrders();
     console.log(orders);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   //Data Columns

@@ -19,7 +19,7 @@ import useGetTotalCartCost from "../customHooks/useGetTotalCartCost";
 const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 20px;
-  ${mobile({ padding: "10px" })}
+  ${mobile({ padding: "5px" })}
 `;
 const Title = styled.h1`
   font-weight: 300;

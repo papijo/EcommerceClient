@@ -12,6 +12,7 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   ${mobile({ display: "none" })}
+  ${tablet({ display: "none" })}
 `;
 
 const Arrow = styled.div`
@@ -39,6 +40,7 @@ const Wrapper = styled.div`
   display: flex;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
+  ${tablet({ height: "80%" })}
 `;
 
 const Slide = styled.div`
@@ -47,22 +49,27 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
   background-color: ${(props) => props.bg};
+  ${tablet({ height: "70vh", display: "flex" })}
 `;
 const ImgContainer = styled.div`
   flex: 1;
   height: 100%;
+  ${tablet({ flex: "1" })}
 `;
 const Image = styled.img`
   height: 80%;
   margin-left: 100px;
+  ${tablet({ height: "80%", marginLeft: "0px" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  ${tablet({ backgroundColor: "black", flex: "3" })}
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+  ${tablet({ fontSize: "40px" })}
 `;
 const Desc = styled.p`
   margin: 50px 0px;

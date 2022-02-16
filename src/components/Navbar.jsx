@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   ${mobile({ padding: "10px 0px", marginTop: "5px" })}
-  ${tablet({ padding: "20px 0px" })}
+  ${tablet({ padding: "10px 10px" })}
 `;
 //Left Side of Navbar
 const Left = styled.div`
@@ -35,6 +35,7 @@ const Language = styled.span`
         display: none;
     } */
   ${mobile({ display: "none" })}
+  ${tablet({ marginLeft: "20px" })}
 `;
 const SearchContainer = styled.div`
   border: 0.5px solid lightgray;
@@ -78,6 +79,7 @@ const MenuItem = styled.div`
   text-decoration: none;
   color: black;
   ${mobile({ fontSize: "14px", marginLeft: "5px" })}
+  ${tablet({ fontSize: "14px", marginLeft: "5px", marginRight: "5px" })}
 `;
 
 const Avatar = styled.img`

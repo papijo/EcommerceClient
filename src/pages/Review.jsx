@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router";
@@ -6,16 +5,29 @@ import { usePaystackPayment } from "react-paystack";
 import { useSelector, useDispatch } from "react-redux";
 import useGetTotalCartCost from "../customHooks/useGetTotalCartCost";
 import { clearCart } from "../redux/cartRedux";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 const Wrapper = styled.div``;
 const ReviewWrapper = styled.div`
   align-items: center;
   justify-content: center;
+  display: flex;
 `;
 const ReviewOrder = styled.div`
   width: 30%;
   margin: auto;
+  flex: 5;
+  ${mobile({ padding: "5px" })}
+`;
+
+const Left = styled.div`
+  flex: 1;
+  ${mobile({ display: "none" })}
+`;
+const Right = styled.div`
+  flex: 1;
+  ${mobile({ display: "none" })}
 `;
 
 const ReviewHeading = styled.div`
@@ -105,6 +117,7 @@ const Review = () => {
       <Navbar />
       <Wrapper>
         <ReviewWrapper>
+          <Left></Left>
           <ReviewOrder>
             <ReviewHeading>Confirm your Order</ReviewHeading>
             <ReviewBodyOne>
@@ -163,6 +176,7 @@ const Review = () => {
               </Button>
             </ReviewBodyOne>
           </ReviewOrder>
+          <Right></Right>
         </ReviewWrapper>
       </Wrapper>
     </Container>

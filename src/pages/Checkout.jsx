@@ -8,16 +8,28 @@ import { useSelector, useDispatch } from "react-redux";
 import stateCost from "../data/shippingCost";
 import { updateShippingInfo } from "../redux/cartRedux";
 import useGetTotalCartCost from "../customHooks/useGetTotalCartCost";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 const Wrapper = styled.div``;
 const ReviewWrapper = styled.div`
   align-items: center;
   justify-content: center;
+  display: flex;
+`;
+const Left = styled.div`
+  flex: 1;
+  ${mobile({ display: "none" })}
+`;
+const Right = styled.div`
+  flex: 1;
+  ${mobile({ display: "none" })}
 `;
 const ReviewOrder = styled.div`
   width: 30%;
   margin: auto;
+  flex: 3;
+  ${mobile({ width: "95%", padding: "5px" })}
 `;
 const ReviewHeading = styled.div`
   text-align: center;
@@ -92,6 +104,7 @@ const Checkout = () => {
       <Navbar />
       <Wrapper>
         <ReviewWrapper>
+          <Left></Left>
           <ReviewOrder>
             <ReviewHeading>Complete your Order</ReviewHeading>
             <ReviewBodyOne>
@@ -175,6 +188,7 @@ const Checkout = () => {
               </Button>
             </ReviewBodyTwo>
           </ReviewOrder>
+          <Right></Right>
         </ReviewWrapper>
       </Wrapper>
     </Container>

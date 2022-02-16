@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useNavigate } from "react-router";
 import { publicRequest } from "../requestMethods";
 import Notification from "../components/Notification";
@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   padding: 20px;
   background-color: white;
   ${mobile({ width: "75%" })}
+  ${tablet({ width: "75%" })}
 `;
 
 const Title = styled.h1`
@@ -123,6 +124,10 @@ const Register = () => {
     } catch (error) {}
   };
 
+  const signin = () => {
+    navigate("/login");
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -170,7 +175,7 @@ const Register = () => {
         </Form>
         <SignInContainer>
           <Title>Sign In if you already have an account</Title>
-          <ButtonTwo>Sign In</ButtonTwo>
+          <ButtonTwo onClick={signin}>Sign In</ButtonTwo>
         </SignInContainer>
       </Wrapper>
     </Container>
