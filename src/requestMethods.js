@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:3001/api/";
 const BASE_URL = "https://ecomestoreapi.herokuapp.com/api/";
 
 // const TOKEN =
