@@ -76,8 +76,12 @@ const Details = styled.div`
   flex-direction: column;
   justify-content: space-around;
 `;
-const ProductName = styled.div``;
-const ProductId = styled.span``;
+const ProductName = styled.div`
+  word-wrap: break-word;
+`;
+const ProductId = styled.span`
+  word-wrap: break-word;
+`;
 const ProductColor = styled.div`
   width: 20px;
   height: 20px;
