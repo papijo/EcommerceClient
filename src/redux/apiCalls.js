@@ -13,6 +13,10 @@ export const login = async (dispatch, user) => {
   try {
     const res = await publicRequest.post("/auth/login", user);
     dispatch(loginSuccess(res.data));
+    //Console.log data
+    console.log(res.data)
+    //Pass AccessToken to LocalStorage Manually using the setItem method
+
   } catch (err) {
     dispatch(loginFailure());
   }

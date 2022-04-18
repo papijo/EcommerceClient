@@ -19,7 +19,7 @@ import useGetTotalCartCost from "../customHooks/useGetTotalCartCost";
 const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 20px;
-  ${mobile({ padding: "5px" })}
+  ${mobile({ padding: "5px", maxWidth: "100%" })}
 `;
 const Title = styled.h1`
   font-weight: 300;
@@ -61,7 +61,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  ${mobile({ flexDirection: "column" })}
+  ${mobile({ flexDirection: "column", justifyContent: "space-around" })}
 `;
 const ProductDetail = styled.div`
   flex: 2;
@@ -77,10 +77,10 @@ const Details = styled.div`
   justify-content: space-around;
 `;
 const ProductName = styled.div`
-  word-wrap: break-word;
+  ${mobile({ marginRight: "5px" })}
 `;
 const ProductId = styled.span`
-  word-wrap: break-word;
+  ${mobile({ wordWrap: "break-word" })}
 `;
 const ProductColor = styled.div`
   width: 20px;

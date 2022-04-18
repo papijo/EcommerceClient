@@ -17,7 +17,7 @@ import History from "./pages/History";
 import OrderDetail from "./pages/OrderDetail";
 
 const App = () => {
-  const user = useSelector((state) => state?.user?.currentUser);
+  const user = useSelector((state) => state?.user?.currentUser) || null;
   return (
     <Router>
       <Routes>
