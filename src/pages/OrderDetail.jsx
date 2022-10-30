@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { userRequest } from "../requestMethods";
+import { useUserRequest } from "../requestMethods";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -66,11 +66,12 @@ const OrderDetail = () => {
   const location = useLocation();
   const orderId = location.pathname.split("/")[2];
   const id = useSelector((state) => state?.user?.currentUser._id);
+  const { instance } = useUserRequest();
 
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await userRequest.get("/orders/find/" + id);
+        const res = await instance.get("/orders/find/" + id);
         setOrders(res.data);
       } catch (error) {}
     };

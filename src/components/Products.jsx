@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
-import { publicRequest } from "../requestMethods";
+import { useUserRequest } from "../requestMethods";
 
 const Container = styled.div`
   padding: 20px;
@@ -14,13 +14,14 @@ const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  const { instance } = useUserRequest();
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await publicRequest.get(
+        const res = await instance.get(
           cat ? `products?category=${cat}` : "products"
         );
-        setProducts(res.data);
+        setProducts(res?.data);
         // console.log(res.data);
       } catch (err) {}
     };

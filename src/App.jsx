@@ -10,27 +10,36 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
+
 import Review from "./pages/Review";
 import Checkout from "./pages/Checkout";
 import Thankyou from "./pages/Thankyou";
 import History from "./pages/History";
 import OrderDetail from "./pages/OrderDetail";
+import axios from "axios";
 
 const App = () => {
   const user = useSelector((state) => state?.user?.currentUser) || null;
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={user ? <Home /> : <Login />} />
         <Route path="success" element={<Success />} />
         <Route path="order-history" element={user ? <History /> : <Login />} />
         <Route
           path="order-history/:id"
           element={user ? <OrderDetail /> : <Login />}
         />
-        <Route path="products/" element={<ProductList />} />
-        <Route path="products/:cat" element={<ProductList />} />
-        <Route path="product/:id" element={<ProductDetail />} />
+        <Route path="products/" element={user ? <ProductList /> : <Login />} />
+        <Route
+          path="products/:cat"
+          element={user ? <ProductList /> : <Login />}
+        />
+        <Route
+          path="product/:id"
+          element={user ? <ProductDetail /> : <Login />}
+        />
         <Route path="cart" element={<Cart />} />
         <Route path="checkout" element={user ? <Checkout /> : <Login />} />
         <Route path="review" element={<Review />} />

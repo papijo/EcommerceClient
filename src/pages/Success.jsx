@@ -11,7 +11,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { userRequest } from "../requestMethods";
+import { useUserRequest } from "../requestMethods";
 import { Link } from "react-router-dom";
 import useGetTotalCartCost from "../customHooks/useGetTotalCartCost";
 import { clearCart } from "../redux/cartRedux";
@@ -32,11 +32,11 @@ const Success = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
 
   const [orderId, setOrderId] = useState(null);
-
+  const { instance } = useUserRequest();
   useEffect(() => {
     const createOrder = async () => {
       try {
-        const res = await userRequest.post("/orders", {
+        const res = await instance.post("/orders", {
           userId: currentUser._id,
           email: currentUser.email,
           products: cart.products.map((item) => ({

@@ -95,12 +95,11 @@ const Navbar = () => {
   const user = useSelector((state) => state.user.currentUser);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleLogout = async () => {
     dispatch(logout);
     dispatch(clearCart({ cart }));
-    navigate("/");
   };
 
   return (

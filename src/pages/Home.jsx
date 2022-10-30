@@ -1,23 +1,25 @@
-import Announcement from "../components/Announcement"
-import Categories from "../components/Categories"
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
-import Newsletter from "../components/Newsletter"
-import Products from "../components/Products"
-import Slider from "../components/Slider"
+import Announcement from "../components/Announcement";
+import Categories from "../components/Categories";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Newsletter from "../components/Newsletter";
+import Products from "../components/Products";
+import Slider from "../components/Slider";
+import TestRefresh from "../customHooks/TestRefresh";
 
 const Home = () => {
-    return (
-        <div>
-            <Announcement />
-            <Navbar />
-            <Slider />
-            <Categories />
-            <Products />
-            <Newsletter />
-            <Footer />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Announcement />
+      <TestRefresh />
+      <Navbar />
+      <Slider />
+      <Categories />
+      <Products />
+      <Newsletter />
+      <Footer />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

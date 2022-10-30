@@ -93,11 +93,11 @@ const Login = () => {
           <Button onClick={handleLogin} disabled={isFetching}>
             LOGIN
           </Button>
-          {error && (
+          {/* {error && (
             <Error>
               Something went wrong... Please Check Username and Password.
             </Error>
-          )}
+          )} */}
 
           <Links className="link">Forgot Password? </Links>
           <Links className="link">

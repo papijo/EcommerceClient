@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import { userRequest } from "../../src/requestMethods";
+import { useUserRequest } from "../../src/requestMethods";
 import { useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
@@ -31,11 +31,12 @@ const Button = styled.button`
 const History = () => {
   const [orders, setOrders] = useState([]);
   const id = useSelector((state) => state?.user?.currentUser._id);
+  const { instance } = useUserRequest();
 
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await userRequest.get("/orders/find/" + id);
+        const res = await instance.get("/orders/find/" + id);
         setOrders(res.data);
       } catch (error) {}
     };

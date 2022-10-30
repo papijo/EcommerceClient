@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { mobile, tablet } from "../responsive";
-import { publicRequest } from "../requestMethods";
+import { publicRequest, useUserRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -129,10 +129,11 @@ const ProductDetail = () => {
   const cart = useSelector((state) => state.cart);
   const itemHasBeenAddedToCart = cart.products.find((p) => p._id === id);
 
+  const { instance } = useUserRequest();
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await publicRequest.get("/products/find/" + id);
+        const res = await instance.get("/products/find/" + id);
         setProduct(res.data);
       } catch (error) {}
     };
